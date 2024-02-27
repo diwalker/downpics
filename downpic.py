@@ -66,7 +66,7 @@ def salvar_imagem_original(content, destino):
 async def processar_faixa(sem, session, inicio, fim):
     tasks = []
     for numero in tqdm(range(inicio, fim + 1), desc="Baixando imagens", unit="imagem", position=1):
-        url = f'https://www.escolherfotos.com.br/galeria/foto/detalhe/{numero}'
+        url = f'URL/{numero}'
         tasks.append(baixar_imagem(sem, session, url, f'{pasta_download}/imagem_{numero}.gif'))
 
     await asyncio.gather(*tasks)
